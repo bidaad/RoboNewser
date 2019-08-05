@@ -1,0 +1,39 @@
+﻿* { 	margin: 0;	}
+body { 	font: 12px/normal Tahoma;	color: #000000;	padding-bottom:10px;	background:url(https://static.robonewser.com/images/bggreydiag.gif);}
+img {border-width:0px;}
+a {color: black;    background-color: transparent;    text-decoration: none;    font-size:12px;}
+A1:visited {    color: black;    background-color: transparent;    text-decoration: none}
+a:hover{background-color:transparent;color:#FF0000;text-decoration:underline;}
+A:active {    color: #900b09;    background-color: transparent;    text-decoration: none}
+select{	font-size:8pt;	direction:rtl;}
+.HomeWrapper {	width : 970px;	margin: 0px auto;	position: relative;	text-align:center;	border-right:solid 1px #CCCCCC;	border-left:solid 1px #CCCCCC;	border-bottom:solid 1px #CCCCCC;	margin-bottom:17px;	height:100%;background-color:White;}
+.Head1{	background-color:#FFFFFF;	height:66px;	text-align:right;}
+.cLogo{background-image:url('https://static.robonewser.com/images/Logo.jpg');background-repeat:no-repeat;width:147px;height:65px;float:left;}
+
+.NewsList div.cMainNews{	text-align:right;	padding-bottom:5px;	direction:rtl !important;line-height:150%;padding-top:5px;padding-right:5px;}
+.NewsList div.cMainNewsAlter{	text-align:right;	padding-bottom:5px;	direction:rtl !important;line-height:150%;background-color:#DDDDDD;padding-top:5px;padding-right:5px;}
+
+.cResource{	font-size:8pt;	color:#666666;}
+.cResource a {color: Green;}
+.Clear{	clear:both;}
+
+ul{	list-style: none;}
+.PagerContainer{text-align:center;/*width:100%;*/margin:15px;display:block;direction:ltr;}
+/* *****************************************************************************     PAGER  */
+.pager {	text-align: right;	margin: 3px;}
+.pager ul {	direction:ltr;}
+.pager li {	margin-right: 5px;	float: left;	border:1px solide #eee;	direction:ltr;}
+.pager a {	text-align:center;	display: block;	border: 1px solid #ccc;	background-color:White;	padding:3px;}
+.pager .current {	width:17px;	text-align:center;	display: block;	border: 0px solid #ccc;	background: #FFFFFF;	font-weight:bold;}
+.pager a:hover {	background: #0098D4;	border: 1px solid #000;	color: #FFFFFF;}
+/* ***************************************************************************** EO PAGER   */
+
+.ShowItem .Pic {float:left;}
+.Toolbar {background-color:#ECF5FA;border-top:solid 1px #D2E7F4;border-bottom:solid 1px #D2E7F4;height:30px;bottom:4px;margin-bottom:5px;}
+.ShowItem fieldset {margin:15px;}
+.ShowItem {vertical-align:top;direction:rtl;padding:20px;}
+.ShowItem .Title {font-weight:bold;direction:rtl;margin-bottom:5px;}
+.ShowItem .Content {line-height:150%;text-align:justify;}
+
+fieldset.Attach {padding:10px;margin:15px;direction:rtl;}
+.ShowItem .cPic {margin:10px;}

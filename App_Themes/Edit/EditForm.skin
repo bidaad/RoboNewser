@@ -1,0 +1,43 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+
+
+<asp:TextBox runat="server" CssClass="cEngInput"></asp:TextBox>
+<AKP:ExTextBox runat="server" onkeypress="FaKeyPress()" CssClass="cInput" />
+<AKP:ExTextBox runat="server" SkinID="English" dir="ltr"  CssClass="cEngInput" />
+<asp:TextBox SkinID="Time" onkeypress="return IsOnlyTime()" onclick="TimeFocus(this)" onselect="TimeFocus(this)" onchange="TimeValidation(this)" runat="server" style="BORDER: 1px #999999 solid;font-family : tahoma;font-size : 11px;color : #000000;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);z-index:999;filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#FFFFFF,endColorStr=#efefef);"></asp:TextBox>
+
+<asp:Label runat="server" />
+<asp:Label SkinID="Caption" runat="server" style="FONT-SIZE: 8pt;font-weight:bold; FONT-FAMILY: tahoma;direction:rtl;" />
+<asp:Label SkinID="Mandatory" runat="server" style="FONT-SIZE: 8pt;color:Red; FONT-FAMILY: tahoma;direction:rtl;" />
+
+<asp:LinkButton SkinID="SaveButton" AlternateText=" ذخیره " runat="server" CssClass="SaveButton1" />
+<asp:LinkButton SkinID="BackButton" AlternateText=" بازگشت "  runat="server" CssClass = "BlueButton"  />
+<asp:LinkButton SkinID="SendButton" AlternateText=" ذخیره " runat="server" CssClass="SendButton" />
+
+<asp:ImageButton SkinID="SaveButton" AlternateText="(F2) ذخیره" runat="server" CssClass = "cHand" ImageUrl="~/Admin/images/buttons/btn_save.gif" />
+<asp:ImageButton SkinID="BackButton" AlternateText="(F4) بازگشت به لیست"  runat="server" CssClass = "cHand" ImageUrl="~/Admin/images/buttons/btn_back.gif" />
+<asp:ImageButton SkinID="SendButton" AlternateText="(F2) ارسال" runat="server" CssClass = "cHand" ImageUrl="~/Admin/images/buttons/btn_send.gif" />
+
+
+<asp:DropDownList runat="server" Font-Names="Tahoma" Font-Size="8pt" />
+
+<asp:RadioButton runat="server" Font-Names="Tahoma" Font-Size="8pt" />
+<asp:RadioButtonList runat="server" Font-Names="Tahoma" Font-Size="8pt" />
+
+<AKP:ExCheckBox runat="server" Font-Names="Tahoma" Font-Size="8pt" />
+

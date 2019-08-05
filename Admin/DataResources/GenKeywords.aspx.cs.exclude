@@ -1,0 +1,409 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using DataAccess;
+using RoboNewser.Code.DAL;
+using Keywords=DAL.Keywords;
+using KeywordsDataContext=DAL.KeywordsDataContext;
+
+
+internal class LinqList<T> : IEnumerable<T>, IEnumerable
+{
+    IEnumerable items;
+
+    internal LinqList(IEnumerable items)
+    {
+        this.items = items;
+    }
+
+    #region IEnumerable<DataRow> Members
+    IEnumerator<T> IEnumerable<T>.GetEnumerator()
+    {
+        foreach (T item in items)
+            yield return item;
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        IEnumerable<T> ie = this;
+        return ie.GetEnumerator();
+    }
+    #endregion
+}
+public partial class DataResources_GenKeywords : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (ViewState["Counter"] == null)
+            ViewState["Counter"] = 1;
+    }
+    void GenExp()
+    {
+        int Counter = 0;
+        if (ViewState["Counter"] != null)
+            Counter = Convert.ToInt32(ViewState["Counter"]);
+        string _pattern = txtRegEx.Text;
+        string Result = txtstr.Text;
+
+        Regex r = new Regex(_pattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
+        Match m = r.Match(Result);
+        int GroupCount;
+
+        int Index1 = Convert.ToInt32(txtMinLen.Text);
+
+        int c = 0;
+        txtExp1.Text = "";
+
+        while (m.Success)
+        {
+            c++;
+            if (c > Counter)
+                break;
+            txtExp1.Text = m.Groups[Index1].Captures[0].ToString();
+            m = m.NextMatch();
+        }
+        //Response.Write(m.Groups[1].Captures[0].ToString() + " " + m.Groups[1].Captures[0].ToString());
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        ViewState["Counter"] = 1;
+        GenExp();
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        ViewState["Counter"] = Convert.ToInt32(ViewState["Counter"]) + 1;
+        GenExp();
+    }
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        ViewState["Counter"] = Convert.ToInt32(ViewState["Counter"]) - 1;
+        GenExp();
+    }
+
+    protected void Button4_Click(object sender, EventArgs e)
+    {
+        //DataTable dt = Gen1LenKeywords();
+        DataTable dt = GenOneLenKeywords();
+
+
+        GenKeywordList(dt);
+    }
+    protected void Button5_Click(object sender, EventArgs e)
+    {
+        DataTable dt = GenLenKeywords(2);
+
+        GenKeywordList(dt);
+    }
+    protected void Button6_Click(object sender, EventArgs e)
+    {
+        DataTable dt = GenLenKeywords(3);
+
+        GenKeywordList(dt);
+    }
+    protected void Button7_Click(object sender, EventArgs e)
+    {
+        DataTable dt = GenLenKeywords(4);
+
+        GenKeywordList(dt);
+    }
+    protected void Button8_Click(object sender, EventArgs e)
+    {
+        DataTable dt = GenLenKeywords(5);
+
+        GenKeywordList(dt);
+    }
+    private DataTable Gen1LenKeywords()
+    {
+        lblKeywords.Text = "";
+        string _pattern = txtRegEx.Text;
+        string Result = txtstr.Text;
+        string CurKeyword = "";
+        int MinLen = Convert.ToInt32(txtMinLen.Text);
+        int RepeatNum = 0;
+
+        Regex r = new Regex(_pattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
+        Match m = r.Match(Result);
+        Hashtable ResultList = new Hashtable();
+
+        DataTable dt = new DataTable();
+        DataColumn dc1 = new DataColumn("Keyword");
+        DataColumn dc2 = new DataColumn("Count", typeof(int));
+        dt.Columns.Add(dc1);
+        dt.Columns.Add(dc2);
+        DataRow dr;
+
+        while (m.Success)
+        {
+            CurKeyword = m.Groups[0].Captures[0].ToString();
+            RepeatNum = FindKeyNums(Result, CurKeyword);
+            if (RepeatNum > MinLen && CurKeyword.Length > 2)
+            {
+                if (!ResultList.Contains(CurKeyword) && !Tools.IsInGarbageWords(CurKeyword))
+                {
+                    ResultList.Add(CurKeyword, RepeatNum);
+                    dr = dt.NewRow();
+                    dr["Keyword"] = CurKeyword;
+                    dr["Count"] = RepeatNum;
+                    dt.Rows.Add(dr);
+                }
+            }
+            m = m.NextMatch();
+        }
+        return dt;
+    }
+    private DataTable GenOneLenKeywords()
+    {
+        lblKeywords.Text = "";
+        int MinLen = Convert.ToInt32(txtMinLen.Text);
+        string _pattern = txtRegEx.Text;
+        string Result = txtstr.Text;
+        int RepeatNum = 0;
+
+
+        DataTable dt = new DataTable();
+        DataColumn dc1 = new DataColumn("Keyword");
+        DataColumn dc2 = new DataColumn("Count", typeof(int));
+        dt.Columns.Add(dc1);
+        dt.Columns.Add(dc2);
+        DataRow dr;
+
+        ArrayList ResultList = CreateList(_pattern, Result);
+
+        string CurLengthKey = "";
+        for (int i = 0; i < ResultList.Count; i++)
+        {
+            CurLengthKey = ResultList[i].ToString();
+            RepeatNum = FindKeyNums(Result, CurLengthKey);
+            if (RepeatNum > MinLen && !Tools.IsInGarbageWords(CurLengthKey))
+            {
+                dr = dt.NewRow();
+                dr["Keyword"] = CurLengthKey;
+                dr["Count"] = RepeatNum;
+                dt.Rows.Add(dr);
+            }
+        }
+
+        return dt;
+    }
+    private static ArrayList CreateList(string _pattern, string Result)
+    {
+        ArrayList ResultList = new ArrayList();
+        Regex r = new Regex(_pattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
+        Match m = r.Match(Result);
+        string CurKeyword = "";
+        while (m.Success)
+        {
+            CurKeyword = m.Groups[0].Captures[0].ToString();
+            if (CurKeyword.Length > 2)
+            {
+                if (!ResultList.Contains(CurKeyword))
+                {
+                    ResultList.Add(CurKeyword);
+                }
+            }
+            m = m.NextMatch();
+        }
+        return ResultList;
+    }
+    private DataTable GenLenKeywords(int MaxWordLen)
+    {
+        lblKeywords.Text = "";
+        int MinLen = Convert.ToInt32(txtMinLen.Text);
+        string _pattern = txtRegEx.Text;
+        string Result = txtstr.Text;
+        int RepeatNum = 0;
+
+
+        DataTable dt = new DataTable();
+        DataColumn dc1 = new DataColumn("Keyword");
+        DataColumn dc2 = new DataColumn("Count", typeof(int));
+        dt.Columns.Add(dc1);
+        dt.Columns.Add(dc2);
+        DataRow dr;
+
+        ArrayList ResultList = CreateList(_pattern, Result);
+
+        string CurLengthKey = "";
+        for (int i = 0; i < ResultList.Count; i++)
+        {
+            if (i > MaxWordLen && i < ResultList.Count)
+            {
+                for (int j = 0; j < MaxWordLen; j++)
+                    CurLengthKey = ResultList[i - j] + " " + CurLengthKey;
+                CurLengthKey = CurLengthKey.Trim();
+                RepeatNum = FindKeyNums(Result, CurLengthKey);
+                if (RepeatNum > MinLen)
+                {
+                    dr = dt.NewRow();
+                    dr["Keyword"] = CurLengthKey;
+                    dr["Count"] = RepeatNum;
+                    dt.Rows.Add(dr);
+                }
+                CurLengthKey = "";
+            }
+        }
+
+        return dt;
+    }
+
+    private void GenKeywordList(DataTable dt)
+    {
+        txtExp1.Text = txtstr.Text.Length.ToString();
+        LinqList<DataRow> rows = new LinqList<DataRow>(dt.Rows);
+        IEnumerable<DataRow> selectedRows = from myrow in rows
+                                            orderby ((int)myrow["Count"]) descending
+                                            select myrow;
+        foreach (DataRow dtrow in selectedRows)
+        {
+            lblKeywords.Text += dtrow["Keyword"].ToString() + " = " + dtrow["Count"].ToString() + "<BR>";
+        }
+    }
+    protected int FindKeyNums(string Content, string Keyword)
+    {
+        int Count = 0;
+        int IndexPos;
+        IndexPos = Content.IndexOf(Keyword);
+        while (IndexPos >= 0)
+        {
+            Count++;
+            IndexPos = Content.IndexOf(Keyword, IndexPos + 1);
+        }
+        return Count;
+    }
+    private string ExtractKeywords(string NewsContent)
+    {
+        Tools tools = new Tools();
+        ArrayList OneLenList = tools.GenLenKeywords(1, 2, @"(\w+)(\w+)", NewsContent);
+        ArrayList TwoLenList = tools.GenLenKeywords(2, 2, @"(\w+)(\w+)", NewsContent);
+        ArrayList TreeLenList = tools.GenLenKeywords(3, 1, @"(\w+)(\w+)", NewsContent);
+        ArrayList FourLenList = tools.GenLenKeywords(4, 1, @"(\w+)(\w+)", NewsContent);
+
+        string[] OneLenListArray = (String[])OneLenList.ToArray(typeof(string));
+        string[] TwoLenListArray = (String[])TwoLenList.ToArray(typeof(string));
+        string[] TreeLenListArray = (String[])TreeLenList.ToArray(typeof(string));
+        string[] FourLenListArray = (String[])FourLenList.ToArray(typeof(string));
+
+        IEnumerable<String> FullKeyList;
+        FullKeyList = OneLenListArray.Union(TwoLenListArray).Union(TreeLenListArray).Union(FourLenListArray);
+        return Tools.GetkeywordCodes(FullKeyList);
+
+    }
+
+    protected void Button9_Click(object sender, EventArgs e)
+    {
+        //string KeywordCodeList;
+        //NewsDataContext dc = new NewsDataContext();
+        //var NList = from n in dc.vTempNews
+        //            select n;
+        //foreach (vTempNew CurNews in NList)
+        //{
+        //    KeywordCodeList = "";
+        //    if(CurNews.Contents != "")
+        //        KeywordCodeList = ExtractKeywords(CurNews.Contents);
+        //    #region Save Keyword Codes
+        //    if (KeywordCodeList != "")
+        //    {
+        //        BOLEntityKeywords EntityKeywordsBOL = new BOLEntityKeywords();
+        //        EntityKeywordsBOL.SaveKeywordList(CurNews.Code, KeywordCodeList, 1);
+        //        BOLEntityRelations EntityRelationsBOL = new BOLEntityRelations();
+        //        EntityRelationsBOL.SetAllRelations(CurNews.Code, 1, 4);
+
+        //    #endregion
+        //    }
+
+        //}
+
+
+
+        string KeywordCodeList;
+        string cnStr = ConfigurationManager.ConnectionStrings["GBNConnectionString"].ConnectionString;
+        SQLServer dal = new SQLServer(cnStr);
+        string SqlStr = "Select top 30000 * from vTempNews";
+        DataSet ds = dal.runSQLDataSet(SqlStr, "Result");
+        DataTable dt = ds.Tables[0];
+        
+        for(int i = 0 ; i < dt.Rows.Count; i++)
+        {
+            KeywordCodeList = "";
+            if (dt.Rows[i]["Contents"].ToString() != "")
+                KeywordCodeList = ExtractKeywords(dt.Rows[i]["Contents"].ToString());
+            #region Save Keyword Codes
+            if (KeywordCodeList != "")
+            {
+                BOLEntityKeywords EntityKeywordsBOL = new BOLEntityKeywords();
+                EntityKeywordsBOL.SaveKeywordList(Convert.ToInt32(dt.Rows[i]["Code"]), KeywordCodeList, 1);
+                BOLEntityRelations EntityRelationsBOL = new BOLEntityRelations();
+                EntityRelationsBOL.SetAllRelations(Convert.ToInt32(dt.Rows[i]["Code"]), 1, 4);
+
+            #endregion
+            }
+
+        }
+
+
+    }
+    protected void Button10_Click(object sender, EventArgs e)
+    {
+        BOLEntityRelations EntityRelationsBOL = new BOLEntityRelations();
+        NewsDataContext dc = new NewsDataContext();
+        var NList = from n in dc.News
+                    select n;
+        foreach (News CurNews in NList)
+        {
+            try
+            {
+                EntityRelationsBOL.SetRelatedEntities(CurNews.Code, 1,1, 4);
+            }
+            catch
+            {
+            }
+
+        }
+
+
+    }
+    
+    protected void Button12_Click(object sender, EventArgs e)
+    {
+        KeywordsDataContext dc = new KeywordsDataContext();
+        Tools tools = new Tools();
+        //foreach (GarbageWords item in dc.GarbageWords)
+        //{
+        //    try
+        //    {
+        //        item.Word = tools.PersianTextCorrection2(item.Word);
+        //        dc.SubmitChanges();
+        //    }
+        //    catch (Exception eee)
+        //    {
+        //        int aa = 1;
+        //    }
+        //}
+
+
+        foreach (Keywords item in dc.Keywords)
+        {
+            try
+            {
+                item.Name = tools.PersianTextCorrection2(item.Name);
+                dc.SubmitChanges();
+            }
+            catch (Exception eee)
+            {
+                int aa = 1;
+            }
+        }
+    }
+}

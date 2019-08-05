@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:IranMC" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ShoppingService" targetNamespace="urn:IranMC" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types />
+  <message name="GetSendPriceRequest">
+    <part name="ProductSumPrice" type="xsd:string" />
+    <part name="ProductSumWeight" type="xsd:string" />
+    <part name="OstanId" type="xsd:int" />
+    <part name="ShahrId" type="xsd:int" />
+    <part name="SendType" type="xsd:int" />
+  </message>
+  <message name="GetSendPriceResponse">
+    <part name="Result" type="xsd:string" />
+  </message>
+  <message name="RegisterOrderRequest">
+    <part name="Name" type="xsd:string" />
+    <part name="LastName" type="xsd:string" />
+    <part name="Company" type="xsd:string" />
+    <part name="JobTel" type="xsd:string" />
+    <part name="HomeTel" type="xsd:string" />
+    <part name="Mobile" type="xsd:string" />
+    <part name="Email" type="xsd:string" />
+    <part name="ZipCode" type="xsd:string" />
+    <part name="Address" type="xsd:string" />
+    <part name="Comment" type="xsd:string" />
+    <part name="OstanId" type="xsd:int" />
+    <part name="ShahrId" type="xsd:int" />
+    <part name="Orders" type="xsd:string" />
+    <part name="SendType" type="xsd:int" />
+    <part name="Discount" type="xsd:int" />
+  </message>
+  <message name="RegisterOrderResponse">
+    <part name="FactorKey" type="xsd:string" />
+  </message>
+  <message name="GetStateRequest">
+    <part name="FactorKey" type="xsd:string" />
+  </message>
+  <message name="GetStateResponse">
+    <part name="State" type="xsd:int" />
+  </message>
+  <message name="GetMultiStatesRequest">
+    <part name="FactorKeyStr" type="xsd:string" />
+  </message>
+  <message name="GetMultiStatesResponse">
+    <part name="StateStr" type="xsd:string" />
+  </message>
+  <message name="TotalOrdersRequest">
+    <part name="State" type="xsd:int" />
+  </message>
+  <message name="TotalOrdersResponse">
+    <part name="Result" type="xsd:int" />
+  </message>
+  <portType name="ShoppingPortType">
+    <operation name="GetSendPrice" parameterOrder="ProductSumPrice ProductSumWeight OstanId ShahrId SendType">
+      <input message="tns:GetSendPriceRequest" />
+      <output message="tns:GetSendPriceResponse" />
+    </operation>
+    <operation name="RegisterOrder" parameterOrder="Name LastName Company JobTel HomeTel Mobile Email ZipCode Address Comment OstanId ShahrId Orders SendType Discount">
+      <input message="tns:RegisterOrderRequest" />
+      <output message="tns:RegisterOrderResponse" />
+    </operation>
+    <operation name="GetState" parameterOrder="FactorKey">
+      <input message="tns:GetStateRequest" />
+      <output message="tns:GetStateResponse" />
+    </operation>
+    <operation name="GetMultiStates" parameterOrder="FactorKeyStr">
+      <input message="tns:GetMultiStatesRequest" />
+      <output message="tns:GetMultiStatesResponse" />
+    </operation>
+    <operation name="TotalOrders" parameterOrder="State">
+      <input message="tns:TotalOrdersRequest" />
+      <output message="tns:TotalOrdersResponse" />
+    </operation>
+  </portType>
+  <binding name="ShoppingBinding" type="tns:ShoppingPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="GetSendPrice">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="urn:IranMC" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:IranMC" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="RegisterOrder">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="urn:IranMc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:IranMc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="urn:IranMC" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:IranMC" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetMultiStates">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="urn:IranMC" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:IranMC" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="TotalOrders">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="urn:IranMC" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:IranMC" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ShoppingService">
+    <port name="ShoppingPort" binding="tns:ShoppingBinding">
+      <soap:address location="http://466.ir/Webservice/SoapServer.php" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Dictionaries">
+  <DataContextMoniker Name="/DictionariesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3fc9de62-ca71-44da-8dac-c34680d1413c" absoluteBounds="2.125, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DictionariesDataContext/EF" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7475263-1e5a-419f-b6e2-2b7cc9dcbcc8" absoluteBounds="2.1399999999999997, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b542932f-342f-4369-b3ef-10959e335b90" absoluteBounds="2.25, 2.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DictionariesDataContext/EA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="efe10b58-e9c2-4df8-b4f9-60c48d6c298a" absoluteBounds="2.265, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b48883bc-483b-410f-a762-fded8646c368" absoluteBounds="4.875, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DictionariesDataContext/EE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c95e929d-dfe1-4f54-a5b2-d8167abc8a05" absoluteBounds="4.8900000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="819fe5dc-ed3e-42c4-b734-b2dba7cf60b3" absoluteBounds="4.875, 4, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/DictionariesDataContext/EG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27058f85-a42c-4346-9839-f3b966fc3b68" absoluteBounds="4.89, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="81108b12-5100-4ef3-ad40-1c44afcadea5" absoluteBounds="4.875, 2.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DictionariesDataContext/EI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53b6712a-7cf2-4ad2-83de-d17943341e2c" absoluteBounds="4.8900000000000006, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="923c38a2-5580-4b30-9c91-733ef49667c4" absoluteBounds="2.25, 4, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/DictionariesDataContext/ES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26d7d337-daa6-4470-a63a-8ae6af9253c1" absoluteBounds="2.2649999999999997, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cff6d6a1-a4e0-40aa-a87c-40de40b092b7" absoluteBounds="7.625, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DictionariesDataContext/SearchedWords" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b51b03d9-fde7-402d-b142-f2acc40e14f2" absoluteBounds="7.6400000000000006, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,253 @@
+﻿<%@ Page Language="C#" StylesheetTheme="Edit" MasterPageFile="~/Admin/Main.master"
+    AutoEventWireup="true" CodeFile="EditReqADs.aspx.cs" Inherits="ReqADs_EditReqADs"
+    Title="ReqADs" %>
+
+<asp:Content runat="server" ID="content1" ContentPlaceHolderID="cphMain">
+
+    <script language="javascript" type="text/javascript">
+        var SelTab = <%=SelectedTabIndex%>;
+        function ClientTabSelectedHandler(sender, eventArgs)
+        {
+          var tabStrip = sender;
+          SelTab = tabStrip.SelectedIndex
+        }
+        function GoToPage()
+        {
+            window.location.href = 'EditReqADs.aspx?SelectedTab=' + SelTab + '&Code=<%=Code%>'
+        }
+    </script>
+
+    <div style="text-align: center">
+        <div >
+            <table class="cTblEdit" bordercolor="#697077" border="1" align="center" cellpadding="0"
+                cellspacing="0">
+                <tr>
+                    <th>
+                        <div >
+                            <div style="width: 180px; float: left;">
+                                <table align="left" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="imgBtnReport" runat="server" ImageUrl="~/images/Report.gif"
+                                                ToolTip="گزارش" />
+                                        </td>
+                                        <td class="cSepVer">
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="imgBtnSearch" runat="server" ImageUrl="~/images/Search.gif"
+                                                ToolTip="جستجو" />
+                                        </td>
+                                        <td class="cSepVer">
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="imgBtnOpenFol" runat="server" ImageUrl="~/images/OpenFol.gif"
+                                                ToolTip="" />
+                                        </td>
+                                        <td class="cSepVer">
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/images/Help.gif" ToolTip="راهنما" />
+                                        </td>
+                                        <td class="cSepVer">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div style="width: 700px; float: right; text-align: right; color: White;">
+                                <asp:Label runat="server" ID="lblSysName"></asp:Label></div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="cTDEdit">
+                        <table cellpadding="2" cellspacing="0" width="100%">
+                            <tr>
+                                <td class="cEditRight">
+                                    <table class="cEditMain" width="100%">
+                                        <tr>
+                                            <td style="vertical-align: top;">
+                                                <div class="cHeaderEditMain">
+                                                    <table align="left" width="150" dir="ltr">
+                                                        <tr>
+                                                            <td>
+                                                                <asp:ImageButton ID="imgBtnDelete" runat="server" ImageUrl="~/images/Delete.gif"
+                                                                    ToolTip="حذف" />
+                                                            </td>
+                                                            <td class="cSepVer">
+                                                            </td>
+                                                            <td>
+                                                                <asp:HyperLink ID="hplView" runat="server" onclick="GoToPage()" ImageUrl="~/images/View.gif"
+                                                                    ToolTip="حالت نمایش" />
+                                                            </td>
+                                                            <td class="cSepVer">
+                                                            </td>
+                                                            <td>
+                                                                <asp:ImageButton ID="imgBtnPrint" runat="server" ImageUrl="~/images/Print.gif" ToolTip="چاپ" />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="cEditMainData">
+                                                    <table align="center" width="100%">
+                                                        <tr>
+                                                            <td>
+                                                                <div>
+                                                                    <div>
+                                                                        <AKP:MsgBox ID="msgBox" runat="server" CssClass="cError" />
+                                                                    </div>
+                                                                    <div>
+                                                                        <table class="cTblOneRow">
+                                                                            <tr>
+                                                                                <td class="cFieldLeft">
+                                                                                    <table class="cTblField">
+                                                                                        <tr>
+                                                                                            <td class="cCtrl">
+                                                                                                <AKP:ExTextBox ID="txtName" jas="1" CssClass="cMultiLine" TextMode="MultiLine" MaxLength="200"
+                                                                                                    runat="server" />
+                                                                                            </td>
+                                                                                            <td class="cLabel">
+                                                                                                <asp:Label ID="lblName" runat="server" Text="Not Defined:"></asp:Label>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td class="cFieldRight">
+                                                                                    <table class="cTblField">
+                                                                                        <tr>
+                                                                                            <td class="cCtrl">
+                                                                                                <AKP:ExTextBox ID="txtFishNo" jas="1" CssClass="cMultiLine" TextMode="MultiLine"
+                                                                                                    MaxLength="200" runat="server" />
+                                                                                            </td>
+                                                                                            <td class="cLabel">
+                                                                                                <asp:Label ID="lblFishNo" runat="server" Text="Not Defined:"></asp:Label>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div>
+                                                                        <table class="cTblOneRow">
+                                                                            <tr>
+                                                                                <td class="cFieldLeft">
+                                                                                    <table class="cTblField">
+                                                                                        <tr>
+                                                                                            <td class="cCtrl">
+                                                                                                <AKP:Combo ID="cboHCAccountBankNameCode" jas="1" BaseID="HCAccountBankNames" runat="server" />
+                                                                                            </td>
+                                                                                            <td class="cLabel">
+                                                                                                <asp:Label ID="lblHCAccountBankNameCode" runat="server" Text="Not Defined:"></asp:Label>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td class="cFieldRight">
+                                                                                    <table class="cTblField">
+                                                                                        <tr>
+                                                                                            <td class="cCtrl">
+                                                                                                <AKP:ExTextBox ID="txtADSText" jas="1" CssClass="cMultiLine" TextMode="MultiLine"
+                                                                                                    MaxLength="1000" runat="server" />
+                                                                                            </td>
+                                                                                            <td class="cLabel">
+                                                                                                <asp:Label ID="lblADSText" runat="server" Text="Not Defined:"></asp:Label>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div>
+                                                                        <table class="cTblOneRow">
+                                                                            <tr>
+                                                                                <td class="cFieldLeft">
+                                                                                    <table class="cTblField">
+                                                                                        <tr>
+                                                                                            <td class="cCtrl">
+                                                                                                <AKP:Lookup ID="lkpUserCode" jas="1" BaseID="Users" runat="server" />
+                                                                                            </td>
+                                                                                            <td class="cLabel">
+                                                                                                <asp:Label ID="lblUserCode" runat="server" Text="کاربر:"></asp:Label>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td class="cFieldRight">
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div>
+                                                                        <table class="cTblOneRow">
+                                                                            <tr>
+                                                                                <td class="cFieldLeft">
+                                                                                    <table class="cTblField">
+                                                                                        <tr>
+                                                                                            <td class="cCtrl">
+                                                                                                <AKP:ExTextBox ID="txtLink" jas="1" BaseID="Users" runat="server" />
+                                                                                            </td>
+                                                                                            <td class="cLabel">
+                                                                                                <asp:Label ID="Label1" runat="server" Text="لینک:"></asp:Label>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td class="cFieldRight">
+                                                                                    <table class="cTblField">
+                                                                                        <tr>
+                                                                                            <td class="cCtrl">
+                                                                                                <AKP:ExTextBox ID="txtTitle" jas="1" BaseID="Users" runat="server" />
+                                                                                            </td>
+                                                                                            <td class="cLabel">
+                                                                                                <asp:Label ID="Label2" runat="server" Text="عنوان:"></asp:Label>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                    <div class="cHorSep">
+                                    </div>
+                                    <div style="text-align: left">
+                                        <table cellpadding="2" cellspacing="4">
+                                            <tr>
+                                                <td>
+                                                    <asp:ImageButton ID="imgBtnBack" SkinID="BackButton" OnClick="GoToList" runat="server" />
+                                                </td>
+                                                <td class="cVerBar1">
+                                                </td>
+                                                <td>
+                                                    <asp:LinkButton ID="imgBtnSave" Text="Save" SkinID="SaveButton" OnClick="DoSave"
+                                                        runat="server" />
+                                                </td>
+                                                <td class="cVerBar1">
+                                                </td>
+                                                <td>
+                                                    <button onclick="ChangeLang()" class="cBtnImage2" type="button">
+                                                        <img alt="" name="langimg" border="0" src="../images/Farsibtn.gif" width="16" height="16" /></button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</asp:Content>

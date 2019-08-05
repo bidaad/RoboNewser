@@ -1,0 +1,3 @@
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="UserControls_Banner" CodeBehind="Banner.ascx.cs" %>
+<asp:HyperLink Target="_blank" runat="server" ID="hlBanner">
+    <asp:Image ID="imgBanner" GenerateEmptyAlternateText="true" CssClass="cBanner" BorderWidth="1" BorderColor="Black" runat="server" /></asp:HyperLink><asp:Literal ID="ltrFlash" Visible="false" runat="server"></asp:Literal><asp:Literal ID="ltrText" Visible="false" runat="server"></asp:Literal>

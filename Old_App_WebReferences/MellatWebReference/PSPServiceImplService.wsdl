@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="http://extws.service.psp.bps.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PSPServiceImplService" targetNamespace="http://extws.service.psp.bps.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://extws.service.psp.bps.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getFuelTransactions" type="tns:getFuelTransactions" />
+      <xs:element name="getFuelTransactionsResponse" type="tns:getFuelTransactionsResponse" />
+      <xs:element name="getInquiryRow" type="tns:getInquiryRow" />
+      <xs:element name="getInquiryRowResponse" type="tns:getInquiryRowResponse" />
+      <xs:element name="getTransactions" type="tns:getTransactions" />
+      <xs:element name="getTransactionsResponse" type="tns:getTransactionsResponse" />
+      <xs:element name="inquiry" type="tns:inquiry" />
+      <xs:element name="inquiryResponse" type="tns:inquiryResponse" />
+      <xs:element name="reverse" type="tns:reverse" />
+      <xs:element name="reverseResponse" type="tns:reverseResponse" />
+      <xs:element name="setTransDescription" type="tns:setTransDescription" />
+      <xs:element name="setTransDescriptionResponse" type="tns:setTransDescriptionResponse" />
+      <xs:element name="settle" type="tns:settle" />
+      <xs:element name="settleResponse" type="tns:settleResponse" />
+      <xs:complexType name="inquiry">
+        <xs:sequence>
+          <xs:element name="trmId" type="xs:int" />
+          <xs:element name="saleCode" type="xs:long" />
+          <xs:element name="TransactionNo" type="xs:long" />
+          <xs:element minOccurs="0" name="Hashcode" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" type="xs:string" />
+          <xs:element minOccurs="0" name="Pass" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="inquiryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTransactions">
+        <xs:sequence>
+          <xs:element name="trmId" type="xs:int" />
+          <xs:element name="fromTransactionDate" type="xs:int" />
+          <xs:element name="toTransactionDate" type="xs:int" />
+          <xs:element name="saleCode" type="xs:long" />
+          <xs:element name="transactionNo" type="xs:long" />
+          <xs:element minOccurs="0" name="hashCode" type="xs:string" />
+          <xs:element minOccurs="0" name="userID" type="xs:string" />
+          <xs:element minOccurs="0" name="pass" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTransactionsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:transaction" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="transaction">
+        <xs:sequence>
+          <xs:element name="amount" type="xs:int" />
+          <xs:element name="cutoffDate" type="xs:int" />
+          <xs:element name="cutoffTime" type="xs:int" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="pan" type="xs:string" />
+          <xs:element minOccurs="0" name="refId" type="xs:string" />
+          <xs:element name="saleCode" type="xs:long" />
+          <xs:element name="surveyDate" type="xs:int" />
+          <xs:element name="surveyStatus" type="xs:int" />
+          <xs:element name="surveyTime" type="xs:int" />
+          <xs:element name="terminalId" type="xs:int" />
+          <xs:element name="terminalType" type="xs:int" />
+          <xs:element name="transactionDate" type="xs:int" />
+          <xs:element name="transactionId" type="xs:long" />
+          <xs:element name="transactionStatus" type="xs:int" />
+          <xs:element name="transactionTime" type="xs:int" />
+          <xs:element name="transactionType" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reverse">
+        <xs:sequence>
+          <xs:element name="trmId" type="xs:int" />
+          <xs:element name="transactionNo" type="xs:long" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element minOccurs="0" name="pass" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reverseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setTransDescription">
+        <xs:sequence>
+          <xs:element name="trmId" type="xs:int" />
+          <xs:element name="transactionNo" type="xs:long" />
+          <xs:element minOccurs="0" name="userID" type="xs:string" />
+          <xs:element minOccurs="0" name="pass" type="xs:string" />
+          <xs:element minOccurs="0" name="desc" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setTransDescriptionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getInquiryRow">
+        <xs:sequence>
+          <xs:element name="trmId" type="xs:int" />
+          <xs:element name="transactionNo" type="xs:long" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element minOccurs="0" name="pass" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getInquiryRowResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="settle">
+        <xs:sequence>
+          <xs:element name="trmId" type="xs:int" />
+          <xs:element name="transactionNo" type="xs:long" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element minOccurs="0" name="pass" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="settleResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getFuelTransactions">
+        <xs:sequence>
+          <xs:element name="trmId" type="xs:long" />
+          <xs:element name="fromDate" type="xs:int" />
+          <xs:element name="toDate" type="xs:int" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element minOccurs="0" name="pass" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getFuelTransactionsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:rawTransaction" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="rawTransaction">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountNumber" type="xs:long" />
+          <xs:element minOccurs="0" name="amount" type="xs:long" />
+          <xs:element minOccurs="0" name="billId" type="xs:long" />
+          <xs:element minOccurs="0" name="binNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="channelId" type="xs:long" />
+          <xs:element minOccurs="0" name="channeltype" type="xs:short" />
+          <xs:element minOccurs="0" name="commissionAmount" type="xs:long" />
+          <xs:element minOccurs="0" name="customerId" type="xs:long" />
+          <xs:element minOccurs="0" name="generalServiceId" type="xs:long" />
+          <xs:element minOccurs="0" name="internalRefrenceId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="messageDirection" type="xs:short" />
+          <xs:element minOccurs="0" name="messageDirectionPrm" type="xs:long" />
+          <xs:element minOccurs="0" name="originalRefrenceId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="pan" type="xs:long" />
+          <xs:element minOccurs="0" name="partitionNumber" type="xs:short" />
+          <xs:element minOccurs="0" name="payerId" type="xs:long" />
+          <xs:element minOccurs="0" name="paymentId" type="xs:long" />
+          <xs:element minOccurs="0" name="rawTransactionDate" type="xs:int" />
+          <xs:element minOccurs="0" name="rawTransactionId" type="xs:long" />
+          <xs:element minOccurs="0" name="rawTransactionTime" type="xs:string" />
+          <xs:element minOccurs="0" name="responseCode" type="xs:int" />
+          <xs:element minOccurs="0" name="responseMessage" type="xs:string" />
+          <xs:element minOccurs="0" name="responsePrm" type="xs:long" />
+          <xs:element minOccurs="0" name="serviceGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="settleProcessOption" type="xs:short" />
+          <xs:element minOccurs="0" name="settleProcessOptionPrm" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="statement" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="terminalAssignId" type="xs:long" />
+          <xs:element minOccurs="0" name="terminlaId" type="xs:long" />
+          <xs:element minOccurs="0" name="track2" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserNotFoundException" type="tns:UserNotFoundException" />
+      <xs:complexType name="UserNotFoundException">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="InvalidArgumentException" type="tns:InvalidArgumentException" />
+      <xs:complexType name="InvalidArgumentException">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="DbException" type="tns:DbException" />
+      <xs:complexType name="DbException">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="RecordNotFoundException" type="tns:RecordNotFoundException" />
+      <xs:complexType name="RecordNotFoundException">
+        <xs:sequence />
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="setTransDescriptionResponse">
+    <wsdl:part name="parameters" element="tns:setTransDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="inquiry">
+    <wsdl:part name="parameters" element="tns:inquiry" />
+  </wsdl:message>
+  <wsdl:message name="RecordNotFoundException">
+    <wsdl:part name="RecordNotFoundException" element="tns:RecordNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="UserNotFoundException">
+    <wsdl:part name="UserNotFoundException" element="tns:UserNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="getTransactionsResponse">
+    <wsdl:part name="parameters" element="tns:getTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="setTransDescription">
+    <wsdl:part name="parameters" element="tns:setTransDescription" />
+  </wsdl:message>
+  <wsdl:message name="getTransactions">
+    <wsdl:part name="parameters" element="tns:getTransactions" />
+  </wsdl:message>
+  <wsdl:message name="getInquiryRow">
+    <wsdl:part name="parameters" element="tns:getInquiryRow" />
+  </wsdl:message>
+  <wsdl:message name="getInquiryRowResponse">
+    <wsdl:part name="parameters" element="tns:getInquiryRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="inquiryResponse">
+    <wsdl:part name="parameters" element="tns:inquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="settle">
+    <wsdl:part name="parameters" element="tns:settle" />
+  </wsdl:message>
+  <wsdl:message name="settleResponse">
+    <wsdl:part name="parameters" element="tns:settleResponse" />
+  </wsdl:message>
+  <wsdl:message name="reverse">
+    <wsdl:part name="parameters" element="tns:reverse" />
+  </wsdl:message>
+  <wsdl:message name="DbException">
+    <wsdl:part name="DbException" element="tns:DbException" />
+  </wsdl:message>
+  <wsdl:message name="reverseResponse">
+    <wsdl:part name="parameters" element="tns:reverseResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFuelTransactionsResponse">
+    <wsdl:part name="parameters" element="tns:getFuelTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvalidArgumentException">
+    <wsdl:part name="InvalidArgumentException" element="tns:InvalidArgumentException" />
+  </wsdl:message>
+  <wsdl:message name="getFuelTransactions">
+    <wsdl:part name="parameters" element="tns:getFuelTransactions" />
+  </wsdl:message>
+  <wsdl:portType name="PSPService">
+    <wsdl:operation name="inquiry">
+      <wsdl:input name="inquiry" message="tns:inquiry" />
+      <wsdl:output name="inquiryResponse" message="tns:inquiryResponse" />
+      <wsdl:fault name="InvalidArgumentException" message="tns:InvalidArgumentException" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+      <wsdl:fault name="RecordNotFoundException" message="tns:RecordNotFoundException" />
+      <wsdl:fault name="DbException" message="tns:DbException" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactions">
+      <wsdl:input name="getTransactions" message="tns:getTransactions" />
+      <wsdl:output name="getTransactionsResponse" message="tns:getTransactionsResponse" />
+      <wsdl:fault name="InvalidArgumentException" message="tns:InvalidArgumentException" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+      <wsdl:fault name="RecordNotFoundException" message="tns:RecordNotFoundException" />
+      <wsdl:fault name="DbException" message="tns:DbException" />
+    </wsdl:operation>
+    <wsdl:operation name="reverse">
+      <wsdl:input name="reverse" message="tns:reverse" />
+      <wsdl:output name="reverseResponse" message="tns:reverseResponse" />
+      <wsdl:fault name="InvalidArgumentException" message="tns:InvalidArgumentException" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+      <wsdl:fault name="RecordNotFoundException" message="tns:RecordNotFoundException" />
+      <wsdl:fault name="DbException" message="tns:DbException" />
+    </wsdl:operation>
+    <wsdl:operation name="setTransDescription">
+      <wsdl:input name="setTransDescription" message="tns:setTransDescription" />
+      <wsdl:output name="setTransDescriptionResponse" message="tns:setTransDescriptionResponse" />
+      <wsdl:fault name="InvalidArgumentException" message="tns:InvalidArgumentException" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+      <wsdl:fault name="RecordNotFoundException" message="tns:RecordNotFoundException" />
+      <wsdl:fault name="DbException" message="tns:DbException" />
+    </wsdl:operation>
+    <wsdl:operation name="getInquiryRow">
+      <wsdl:input name="getInquiryRow" message="tns:getInquiryRow" />
+      <wsdl:output name="getInquiryRowResponse" message="tns:getInquiryRowResponse" />
+      <wsdl:fault name="InvalidArgumentException" message="tns:InvalidArgumentException" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+      <wsdl:fault name="RecordNotFoundException" message="tns:RecordNotFoundException" />
+      <wsdl:fault name="DbException" message="tns:DbException" />
+    </wsdl:operation>
+    <wsdl:operation name="settle">
+      <wsdl:input name="settle" message="tns:settle" />
+      <wsdl:output name="settleResponse" message="tns:settleResponse" />
+      <wsdl:fault name="InvalidArgumentException" message="tns:InvalidArgumentException" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+      <wsdl:fault name="RecordNotFoundException" message="tns:RecordNotFoundException" />
+      <wsdl:fault name="DbException" message="tns:DbException" />
+    </wsdl:operation>
+    <wsdl:operation name="getFuelTransactions">
+      <wsdl:input name="getFuelTransactions" message="tns:getFuelTransactions" />
+      <wsdl:output name="getFuelTransactionsResponse" message="tns:getFuelTransactionsResponse" />
+      <wsdl:fault name="InvalidArgumentException" message="tns:InvalidArgumentException" />
+      <wsdl:fault name="UserNotFoundException" message="tns:UserNotFoundException" />
+      <wsdl:fault name="RecordNotFoundException" message="tns:RecordNotFoundException" />
+      <wsdl:fault name="DbException" message="tns:DbException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PSPServiceImplServiceSoapBinding" type="tns:PSPService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getTransactions">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTransactions">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTransactionsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidArgumentException">
+        <soap:fault use="literal" name="InvalidArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundException">
+        <soap:fault use="literal" name="RecordNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inquiry">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="inquiry">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="inquiryResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidArgumentException">
+        <soap:fault use="literal" name="InvalidArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundException">
+        <soap:fault use="literal" name="RecordNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reverse">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="reverse">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="reverseResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidArgumentException">
+        <soap:fault use="literal" name="InvalidArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundException">
+        <soap:fault use="literal" name="RecordNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setTransDescription">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="setTransDescription">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setTransDescriptionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidArgumentException">
+        <soap:fault use="literal" name="InvalidArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundException">
+        <soap:fault use="literal" name="RecordNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInquiryRow">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getInquiryRow">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getInquiryRowResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidArgumentException">
+        <soap:fault use="literal" name="InvalidArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundException">
+        <soap:fault use="literal" name="RecordNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="settle">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="settle">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="settleResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidArgumentException">
+        <soap:fault use="literal" name="InvalidArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundException">
+        <soap:fault use="literal" name="RecordNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getFuelTransactions">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getFuelTransactions">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getFuelTransactionsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidArgumentException">
+        <soap:fault use="literal" name="InvalidArgumentException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundException">
+        <soap:fault use="literal" name="UserNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundException">
+        <soap:fault use="literal" name="RecordNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PSPServiceImplService">
+    <wsdl:port name="PSPServiceImplPort" binding="tns:PSPServiceImplServiceSoapBinding">
+      <soap:address location="http://217.218.45.222/bps/services/PSPWS" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

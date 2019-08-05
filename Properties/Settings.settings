@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RoboNewser.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RoboNewser_biz_setap_ws_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.kavosh.biz/Service.asmx</Value>
+    </Setting>
+    <Setting Name="RoboNewser_com_panelesms_www_Send" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.panelesms.com/post/send.asmx</Value>
+    </Setting>
+    <Setting Name="RoboNewser_com_sb24_acquirer_ReferencePayment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://acquirer.sb24.com:80/ref-payment/ws/ReferencePayment</Value>
+    </Setting>
+    <Setting Name="RoboNewser_ir_shaparak_pec_EShopService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pec.shaparak.ir/pecpaymentgateway/eshopservice.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

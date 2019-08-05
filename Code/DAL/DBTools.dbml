@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RoboNewser" Class="DBToolsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=RoboNewser;Persist Security Info=True;User ID=sa;MultipleActiveResultSets=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="RoboNewserConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ItemRates" Member="ItemRates">
+    <Type Name="ItemRates">
+      <Column Name="ItemCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HCEntityCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RateVal" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RateCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spGetCount" Method="spGetCount">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="WhereCond" Parameter="whereCond" Type="System.String" DbType="NVarChar(1000)" />
+    <ElementType Name="spGetCountResult">
+      <Column Name="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

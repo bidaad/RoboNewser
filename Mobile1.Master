@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Mobile1.master.cs" Inherits="RoboNewser.Mobile1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>پارست :: پورتال فرهنگی خبری</title>
+    <link id="Link1" runat="server" href="https://static.robonewser.com/styles/Mobile.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:Panel runat="server" ID="pnlHomeWrapper" CssClass="HomeWrapper">
+        <div class="Head1">
+            <div class="cLogo">
+                            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="CP1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </asp:Panel>
+    </form>
+</body>
+</html>

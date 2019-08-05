@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Zone">
+  <DataContextMoniker Name="/ZoneDataContext" />
+  <nestedChildShapes>
+    <classShape Id="929c0182-a91a-4e86-b0f8-0936e732eedb" absoluteBounds="5.625, 0.5, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/ZoneDataContext/vStates" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68111b66-f10e-49ab-ae19-bb9083a98a6a" absoluteBounds="5.64, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef36f3dd-da44-4bcc-b7b3-60646994612f" absoluteBounds="0.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ZoneDataContext/Cities" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83f58425-98cc-4cad-bfd0-f714d9c39cae" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6942f7b8-ae27-4a7c-b3f4-6b3668fe89a9" absoluteBounds="3.125, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ZoneDataContext/Provinces" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18e15759-63e5-4d02-a437-23df40b578b2" absoluteBounds="3.1400000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8fd989b-5e3b-41df-b02f-0dc7228abcce" isExpanded="false" absoluteBounds="0.5, 2.375, 2, 0.45">
+      <DataClassMoniker Name="/ZoneDataContext/vCities" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc05605e-8155-4702-84c6-c0f1488f99d4" absoluteBounds="0.51499999999999968, 2.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="878836fd-8e30-4ee5-baae-0382b58c3370" isExpanded="false" absoluteBounds="3.125, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/ZoneDataContext/vProvinces" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f0cc3ab-516c-4319-80d7-88857e4189a0" absoluteBounds="3.1400000000000006, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

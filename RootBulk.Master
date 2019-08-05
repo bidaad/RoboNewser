@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RootBulk.master.cs" Inherits="RoboNewser.RootBulk" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>RoboNewser</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta id="description" name="description" runat="server" content="news, Roboto, News Crawler, Robot news" />
+    <meta id="keywords" name="keywords" runat="server" content="news, Roboto, News Crawler, Robot news" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link id="Link2" runat="server" href="/styles/main.css" rel="stylesheet"
+        type="text/css" />
+    <link id="Link5" runat="server" href="https://static.robonewser.com/Styles/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link id="Link4" runat="server" rel="stylesheet" href="~/Styles/font-awesome.min.css" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="https://www.robonewser.com/Styles/s/settings-ie8.css"> <![endif]-->
+    <!--[if LT IE 9]><link id="IE6Minus" rel="stylesheet" type="text/css" href="https://www.robonewser.com/Styles/ie.css" /><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="https://www.robonewser.com/Scripts/html5.js"></script>
+    <script src="https://www.robonewser.com/Scripts/respond.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://www.robonewser.com/Styles/ie8_rtl.css" />
+    <![endif]-->
+
+
+</head>
+<body>
+    <asp:Literal ID="ltrMP" runat="server"></asp:Literal>
+    <form id="form1" runat="server">
+        
+        <div class="Clear">
+        </div>
+    </form>
+    <asp:ContentPlaceHolder ID="CP1" runat="server">
+    </asp:ContentPlaceHolder>
+   
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4554891-30"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4554891-30');
+</script>
+
+</body>
+</html>

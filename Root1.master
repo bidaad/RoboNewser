@@ -1,0 +1,286 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Root1" CodeBehind="Root1.master.cs" %>
+
+<%@ Register Src="UserControls/UCMostVisitedNews.ascx" TagName="MostViewed" TagPrefix="News" %>
+
+<!doctype html3>
+<html lang="en" >
+<head id="Head1" runat="server">
+    <title>RoboNewser</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta id="description" name="description" runat="server" content="news, Robot, News Crawler, Robot news, breaking news headlines, latest news, world news" />
+    <meta id="keywords" name="keywords" runat="server" content="news, Roboto, News Crawler, Robot news" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link runat="server" id="lnkCanonical" rel="canonical" />
+    <meta runat="server" id="twittercard" name="twitter:card" content="@RoboNewser" />
+    <meta runat="server" id="twittersite" name="twitter:site" content="@RoboNewser" />
+    <meta runat="server" id="twittertitle" name="twitter:title" content="@RoboNewser" />
+    <meta runat="server" id="twitterdescription" name="twitter:description" content="@RoboNewser" />
+    <meta runat="server" id="twittercreator" name="twitter:creator" content="@RoboNewser" />
+    <meta runat="server" id="twitterimagesrc" name="twitter:image:src" content="" />
+
+    <meta runat="server" id="ogtitle" property="og:title" content="" />
+    <meta runat="server" id="ogurl" property="og:url" content="" />
+    <meta runat="server" id="ogimage" property="og:image" content="" />
+    <meta runat="server" id="ogdescription" property="og:description" content="" />
+    <meta runat="server" id="ogsite_name" property="og:site_name" content="RoboNewser" />
+
+    <link rel="dns-prefetch" href="//static.robonewser.com" />
+    <meta http-equiv="refresh" content="1200" />
+    <meta name="RefreshJsTimer" content="1200" />
+
+    <link rel="shortcut icon" href="//static.robonewser.com//images/favicon.ico" type="image/x-icon" />
+<%--    <link rel="apple-icon" sizes="57x57" href="//static.robonewser.com/images/apple-icon-57x57.png" />
+    <link rel="apple-icon" sizes="60x60" href="//static.robonewser.com/images/apple-icon-60x60.png" />
+    <link rel="apple-icon" sizes="72x72" href="//static.robonewser.com/images/apple-icon-72x72.png" />
+    <link rel="apple-icon" sizes="76x76" href="//static.robonewser.com/images/apple-icon-76x76.png" />
+    <link rel="apple-icon" sizes="114x114" href="//static.robonewser.com/images/apple-icon-114x114.png" />
+    <link rel="apple-icon" sizes="120x120" href="//static.robonewser.com/images/apple-icon-120x120.png" />
+    <link rel="apple-icon" sizes="144x144" href="//static.robonewser.com/images/apple-icon-144x144.png" />
+    <link rel="apple-icon" sizes="152x152" href="//static.robonewser.com/images/apple-icon-152x152.png" />
+    <link rel="apple-icon" sizes="180x180" href="//static.robonewser.com/images/apple-icon-180x180.png" />--%>
+    <link rel="icon" type="image/png" href="//static.robonewser.com/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="//static.robonewser.com/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="//static.robonewser.com/images/favicon-16x16.png" sizes="16x16" />
+
+
+    <!--[if IE 9]>
+    <link rel="prefetch" href="//static.robonewser.com" />
+    <![endif]-->
+
+    <%--    <link href="//static.robonewser.com/styles/main.css" rel="stylesheet" type="text/css" />
+    <link runat="server" href="//static.robonewser.com/Styles/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link runat="server" href="~/Styles/font-awesome.min.css" rel="stylesheet" type="text/css" />--%>
+
+    <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="//static.robonewser.com/Styles/s/settings-ie8.css"> <![endif]-->
+    <!--[if LT IE 9]><link id="IE6Minus" rel="stylesheet" type="text/css" href="//static.robonewser.com/Styles/ie.css" /><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="//static.robonewser.com/Scripts/html5.js"></script>
+    <script src="//static.robonewser.com/Scripts/respond.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//www.robonewser.com/Styles/ie8_rtl.css" />
+    <![endif]-->
+
+    <script async src="//static.robonewser.com/scripts/jquery-1.11.3.min.js"></script>
+    <script async src="//static.robonewser.com/scripts/bootstrap.min.js"></script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6817401274208407",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        var Fonts = '<link href="/styles/main1.css" rel="stylesheet" type="text/css" />'
+        //Fonts += '<link runat="server" href="//static.robonewser.com/Styles/bootstrap.css" rel="stylesheet" type="text/css" />';
+        Fonts += '<link runat="server" href="~/Styles/font-awesome.min.css" rel="stylesheet" type="text/css" />'
+        document.head.innerHTML = document.head.innerHTML + Fonts;
+
+    </script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4554891-30"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-4554891-30');
+</script>
+
+
+    <link runat="server" href="//static.robonewser.com/Styles/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="Cats">
+            <div class="Cat World">
+                <asp:HyperLink ID="HyperLink8" NavigateUrl="~/World" runat="server"><i class="fa fa-globe gray"></i>World</asp:HyperLink>
+            </div>
+            <div class="Cat Business">
+                <asp:HyperLink ID="HyperLink9" NavigateUrl="~/Business" runat="server"><i class="fa fa-building gray"></i>Business</asp:HyperLink>
+            </div>
+            <div class="Cat Technology">
+                <asp:HyperLink ID="HyperLink10" NavigateUrl="~/Technology" runat="server"><i class="fa fa-twitch gray"></i>Technology</asp:HyperLink>
+            </div>
+            <div class="Cat Entertainment">
+                <asp:HyperLink ID="HyperLink11" NavigateUrl="~/Entertainment" runat="server"><i class="fa fa-file-video-o gray"></i>Entertainment</asp:HyperLink>
+            </div>
+            <div class="Cat Sports">
+                <asp:HyperLink ID="HyperLink12" NavigateUrl="~/Sports" runat="server"><i class="fa fa-soccer-ball-o gray"></i>Sports</asp:HyperLink>
+            </div>
+            <div class="Cat Science">
+                <asp:HyperLink ID="HyperLink13" NavigateUrl="~/Science" runat="server"><i class="fa fa-flask gray"></i>Science</asp:HyperLink>
+            </div>
+            <div class="Cat Health">
+                <asp:HyperLink ID="HyperLink14" NavigateUrl="~/Health" runat="server"><i class="fa fa-stethoscope gray"></i>Health</asp:HyperLink>
+            </div>
+        </div>
+    </div>
+
+
+    <asp:Literal ID="ltrMP" runat="server"></asp:Literal>
+    <form id="form1" runat="server">
+        <div id="topbar">
+            <header>
+                <div class="Header1">
+                    <div class="container">
+                        <div class="position-relative">
+                            <div class="MobileMenuTrigger"><span style="font-size: 22px; cursor: pointer" onclick="openNav()">&#9776; </span></div>
+                            <div class="LogoContainer">
+                                <asp:HyperLink runat="server" NavigateUrl="~/"> <div class="Logo"></div></asp:HyperLink>
+                            </div>
+
+                            <div class="SearchArea d-none d-sm-block">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <asp:TextBox ID="txtKeyword" placeholder="Keyword" Width="600"  CssClass="form-control d-inline-block" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-2">
+                                        <asp:Button ID="btnSearch" CssClass="btn btn-primary " runat="server" Text="Search" OnClick="btnSearch_Click" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Flags d-none d-sm-block">
+                                <a href="https://www.khabardaan.ir" target="_blank">
+                                    <asp:Image ImageUrl="~/images/IranFlag.png" AlternateText="Persian News" ToolTip="Persian News" runat="server" />
+                                </a>
+                                <a href="https://www.allfrenchnews.com" target="_blank">
+                                    <asp:Image ImageUrl="~/images/FranceFlag.png" AlternateText="French New" ToolTip="French News" runat="server" />
+                                </a>
+                            </div>
+                            <div class="DateTimeContainer d-none d-sm-block">
+                                <asp:Label ID="lblDateTime" runat="server" Text=""></asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div id="body" >
+        <div class="clearfix"></div>
+        <div class="container">
+            <div class="MainBody">
+                
+                <div class="row">
+                    <div class="col-lg-2 col-md-12 d-none d-sm-block d-md-block">
+                        <div class="Cats">
+                            <div class="Cat World">
+                                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/World" runat="server"><i class="fa fa-globe gray"></i>World</asp:HyperLink>
+                            </div>
+                            <div class="Cat Business">
+                                <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Business" runat="server"><i class="fa fa-building gray"></i>Business</asp:HyperLink>
+                            </div>
+                            <div class="Cat Technology">
+                                <asp:HyperLink ID="HyperLink3" NavigateUrl="~/Technology" runat="server"><i class="fa fa-twitch gray"></i>Technology</asp:HyperLink>
+                            </div>
+                            <div class="Cat Entertainment">
+                                <asp:HyperLink ID="HyperLink4" NavigateUrl="~/Entertainment" runat="server"><i class="fa fa-file-video-o gray"></i>Entertainment</asp:HyperLink>
+                            </div>
+                            <div class="Cat Sports">
+                                <asp:HyperLink ID="HyperLink5" NavigateUrl="~/Sports" runat="server"><i class="fa fa-soccer-ball-o gray"></i>Sports</asp:HyperLink>
+                            </div>
+                            <div class="Cat Science">
+                                <asp:HyperLink ID="HyperLink6" NavigateUrl="~/Science" runat="server"><i class="fa fa-flask gray"></i>Science</asp:HyperLink>
+                            </div>
+                            <div class="Cat Health">
+                                <asp:HyperLink ID="HyperLink7" NavigateUrl="~/Health" runat="server"><i class="fa fa-stethoscope gray"></i>Health</asp:HyperLink>
+                            </div>
+                        </div>
+                        <div class="mnuKeyword">
+                            <asp:HyperLink ID="hplKeywords" NavigateUrl="~/Keywords.aspx" runat="server"><i class="fa fa-tag gray"></i>&nbsp;Keywords</asp:HyperLink>
+                        </div>
+                        <div class="mnuKeyword">
+                            <asp:HyperLink ID="HyperLink18" NavigateUrl="~/Roles.aspx" runat="server"><i class="fa fa-tag gray"></i>&nbsp;Roles</asp:HyperLink>
+                        </div>
+                        <div class="mnuKeyword">
+                            <asp:HyperLink ID="HyperLink17" NavigateUrl="~/PicKeywords.aspx" runat="server"><i class="fa fa-tag gray"></i>&nbsp;Keyword Pictures</asp:HyperLink>
+                        </div>
+                        <div>
+                            <asp:HyperLink ID="HyperLink19" NavigateUrl="~/News/AllNews.aspx" runat="server">All News</asp:HyperLink>
+                        </div>
+                        <div>
+                            <asp:HyperLink ID="HyperLink15" NavigateUrl="~/ContactUs.aspx" runat="server">Contact Us</asp:HyperLink>
+                        </div>
+                        <div>
+                            <asp:HyperLink ID="HyperLink16" NavigateUrl="~/Crawler" runat="server">About Crawler</asp:HyperLink>
+                        </div>
+                       
+                        <div class="GrayArea">
+                            <div class="HeadWithBotBorder">Latest news pictures </div>
+                            <div class="MIKeywords Padder5">
+                                <ul class="PicList">
+                                    <asp:Repeater ID="rptImages" runat="server">
+                                        <ItemTemplate>
+                                            <li>
+                                                <asp:HyperLink NavigateUrl='<%#"~/News/" + Eval("Code") +  ".html" %>' runat="server"><asp:Image CssClass="img-fluid" AlternateText='<%# Eval("Title") %>' ToolTip=<%# Eval("Title") %> ImageUrl=<%#"//static.robonewser.com/Files/News/" + Eval("PicName") %> runat="server"/></asp:HyperLink></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-7 col-md-12">
+                        
+                        <asp:ContentPlaceHolder ID="CP1" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                    <div class="col-sm-12 col-lg-3 col-md-12 ">
+                        <div class="GrayArea">
+                            <div class="HeadWithBotBorder">In the news </div>
+                            <div class="MIKeywords Padder5">
+                                <asp:Repeater ID="rptMostImportantKeywords" runat="server">
+                                    <ItemTemplate>
+                                        <div>
+                                            <asp:HyperLink NavigateUrl='<%#"~/K/" + Tools.ReplaceSpaceWithUnderline( Eval("Keyword")) + ".html" %>' runat="server"><%#Eval("Keyword") %></asp:HyperLink>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
+                        </div>
+                        <div>
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- RoboNewser VER Responsive 1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6817401274208407"
+     data-ad-slot="3193542032"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                        </div>
+                         <div>
+                            <News:MostViewed runat="server" />
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        <footer>
+            <div id="Footer">
+                <div class="container">
+                    <div id="ToTop"><a href="#page" title="back to top" id="totop-scroller"></a></div>
+                </div>
+            </div>
+        </footer>
+        <asp:HiddenField ID="hfItemCode" runat="server" />
+    </form>
+    <asp:Literal ID="ltrAnnScript" runat="server"></asp:Literal>
+    
+</body>
+</html>

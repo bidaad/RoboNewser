@@ -1,0 +1,234 @@
+﻿
+.WordTextBox
+{
+	position:relative;
+	background-color:#F7FBFF;
+	border:solid 1px;
+	border-top:solid 1px #84A5CE;
+	border-left:solid 1px #84A5CE;
+	border-bottom:solid 1px #C1D2E7;
+	border-right:solid 1px #C1D2E7;
+}
+
+.SearchButton
+{
+	background-image:url('../images/btn_Search.jpg');
+	width:93px;
+	height:22px;
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+
+div.SearchHint
+{
+	text-align:left;
+	padding-left:2px;
+	color:#4372B0;
+}
+
+div.SearchHint  span
+{
+	font-weight:bold;
+	font-size:8pt;
+}
+
+table.tblSearch
+{
+	text-align:center;
+	top:10px;
+	position:relative;
+}
+
+.cSuggestDive
+{
+	cursor:pointer;
+	display:block;
+	width:241px;
+	position:absolute;
+	font-family:Verdana, Helvetica, Arial, sans-serif;
+	font-size:12px;
+	background-color:White;
+	border:solid 1px black;
+	padding:3px 3px 3px 3px ;
+	z-index:1000;
+}
+
+.cResultsDive
+{
+	display:block;
+	width:241px;
+	font-family:Verdana, Helvetica, Arial, sans-serif;
+	font-size:12px;
+	background-color:White;
+	/*border:solid 1px black;*/
+	padding:3px 3px 3px 3px ;
+	z-index:1000;
+}
+
+.cSelectedSuggest
+{
+	background-color:#678FC2;
+	color:White;
+}
+
+.cVisible
+{
+	display:block;
+	position:absolute;
+}
+
+.cHidden
+{
+	display:none;
+	visibility:hidden;
+}
+
+.cWordCell
+{
+	padding-right:5px;
+	padding-top:3px;
+	font-family:Verdana;
+	text-align:left;
+	padding-left:3px;
+}
+
+.cMeaningCell
+{
+	padding-top:3px;
+	font-family:Tahoma;
+	text-align:right;
+	float:right;
+	direction:rtl;
+	padding-right:3px;
+}
+
+
+
+.cWordCellLTR
+{
+	padding-top:3px;
+	font-family:Verdana;
+	text-align:left;
+	padding-left:10px;
+	padding-right:5px;
+}
+
+.cMeaningCellLTR
+{
+	padding-top:3px;
+	font-family:Tahoma;
+	text-align:left;
+	direction:ltr;
+	padding-right:3px;
+	padding-bottom:5px;
+}
+
+
+.ctblResults
+{
+	width:100%;
+	float:left;
+	border-collapse:collapse;
+	border:solid 1px;
+}
+
+#ResultsDiv
+{
+	text-align:left;
+	width:100%;
+}
+
+.cResultRow
+{
+	background-color:#E8EEF7;
+	background-image:url('../images/bg_over1.jpg');
+	background-position:bottom;
+	background-repeat:repeat-x;
+	height:26px;
+	cursor:pointer;
+	padding-bottom:20px;
+	margin-bottom:14px;
+	
+}
+
+.cResultRowAlter
+{
+	background-position:bottom;
+	background-color:#E8EEF7;
+	background-image:url('../images/bg_over2.jpg');
+	background-repeat:repeat-x;
+	height:26px;
+	cursor:pointer;
+	padding-bottom:4px;
+}
+
+#BottomLinks
+{
+	font-size:8pt;
+	position:relative;
+	top:47px;
+	left:30px;
+	color:Gray;
+}
+
+#BottomLinks a
+{
+	color:blue;
+}
+
+#AllSubmenus table
+{
+	display:none;
+}
+
+.MultiLangdic
+{
+	width:317px;
+	height:33px;
+	background-image:url('../images/MultiLangDic.jpg');
+	background-repeat:repeat-x;
+	position:relative;
+	float:right;
+	top:15px;
+	right:10px;
+}
+
+.RoboNewserSmallLogo
+{
+	width:43px;
+	height:44px;
+	background-image:url('../images/RoboNewserSmallLogo.jpg');
+	background-repeat:repeat-x;
+	position:relative;
+	float:left;
+	top:4px;
+	left:24px;
+}
+
+#LastSearchedWords
+{
+	background-color: #E0ECFF;
+	margin-bottom:5px;
+}
+
+.cHistoryWord
+{
+	padding-top:5px;
+	padding-left:3px;
+	cursor:pointer;
+	background-image:url('../images/bg_over1.jpg');
+	background-repeat:repeat-x;
+	height:26px;
+	
+}
+.ctblMyWords
+{
+	width:92%;
+}
+
+#MyWordsDiv
+{
+	width:300px;
+	height:300px;
+	overflow:scroll;
+}

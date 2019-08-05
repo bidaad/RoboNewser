@@ -1,0 +1,24 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+<%@ Register Src="~/UserControls/Login.ascx" TagName="Login" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>RoboNewser</title>
+    <link id="Link1" runat="server" href="~/Admin/styles/main.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body onload="document.getElementById('Login1_txtUsername').focus();">
+    <form id="Form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div id="wrapper1">
+        <div class="cLoginBox">
+            <uc1:Login ID="Login1" Mode="AdminUser" runat="server" />
+        </div>
+    </div>
+    </form>
+</body>
+</html>

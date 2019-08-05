@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11" name="News">
+  <DataContextMoniker Name="/NewsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="50b4ba30-4ee4-45d5-beb0-c8c71bf1ce65" absoluteBounds="0.5, 0.5, 2, 5.4246240234375">
+      <DataClassMoniker Name="/NewsDataContext/News" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aac68c85-0e0d-41d7-b908-acc67fbe48d2" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e9ebc114-4546-4eec-8e10-7cad261a8a41" isExpanded="false" absoluteBounds="3.25, 3.625, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vRandNew" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5952465-d0b4-498a-bf21-1f3aeb6cd267" absoluteBounds="3.265, 4.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4fb35906-74c9-4a9a-b723-0580f97f0a87" isExpanded="false" absoluteBounds="3.25, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vRandPicNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e48581d-9719-4cda-9fa9-71b441be0ee2" absoluteBounds="3.2649999999999997, 4.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e97a387a-fad3-4508-bd5d-c55757385a4f" isExpanded="false" absoluteBounds="3.25, 5, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vLatestNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60948a11-d983-4905-8e93-97535fca4adb" absoluteBounds="3.2650000000000006, 5.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="308a978c-77c6-4faa-85a5-dc8514ad5919" isExpanded="false" absoluteBounds="3.25, 2.375, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vRandTextNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="88631d55-a81e-4089-90a6-536766855042" absoluteBounds="3.2650000000000006, 2.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1393a028-42c8-45a4-b66e-f2597a5d7313" isExpanded="false" absoluteBounds="0.5, 7.125, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vNewsByCatCode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1de93b9-cc0f-4029-8948-d8ed0c9abb7f" absoluteBounds="0.515, 7.5850000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1113208-368e-4bb0-b1b1-5a1f4ab8dd02" isExpanded="false" absoluteBounds="0.5, 7.75, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vNewsByKeywords" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ef128be-6c79-4887-8a1f-a732240b1ef0" absoluteBounds="0.51500000000000012, 8.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eb9d5c10-dcd6-4623-a10b-bccbfc820b79" isExpanded="false" absoluteBounds="0.5, 6.5, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vNewsflowNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9995c153-d88f-456f-9300-19ceb3a54f7c" absoluteBounds="0.51499999999999968, 6.9600000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3012cc86-facb-423f-869b-496cb4899e3a" isExpanded="false" absoluteBounds="3.25, 3, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vImportantKeywords" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b656e184-727f-43a7-b44b-152bbea37597" absoluteBounds="3.2649999999999997, 3.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9757e917-6568-41b2-9d9f-4080f9d961d3" absoluteBounds="5.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/NewsDataContext/NewsVisits" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fd90eee-41d5-45d8-8872-1cd69b146536" absoluteBounds="5.515, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ae0b0319-fc1e-4fd0-934e-eb0abc09a784" isExpanded="false" absoluteBounds="3.25, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vMostVisitedNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6016fa0b-6169-460d-9bdb-24c39930cd9a" absoluteBounds="3.2649999999999997, 2.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8142e473-e0b9-448e-a714-884efd7d9e2d" isExpanded="false" absoluteBounds="3.25, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vMVNews12h" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60b44c30-a212-4d70-b9a5-90e33c8932e1" absoluteBounds="3.2649999999999997, 6.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac669401-5118-4e4c-bfd6-039d158543ce" isExpanded="false" absoluteBounds="3.25, 6.875, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vMVNews24h" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a74e5f96-3a68-4d27-a74f-b1786647d15e" absoluteBounds="3.2650000000000006, 7.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e785bc2e-3f39-48d7-ba01-f8c476417659" isExpanded="false" absoluteBounds="3.25, 5.625, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vMVNews4h" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a957d3c-cc10-49f3-b31e-7be16e8bbdd3" absoluteBounds="3.2650000000000006, 6.0850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0989d21-961c-465a-9adb-fde65f78d07e" absoluteBounds="7.875, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/NewsDataContext/NewsEmails" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e4c8911-1a5a-4258-bf21-fbfdc8a37d85" absoluteBounds="7.8900000000000006, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bab3fc20-66ae-4582-b670-b54ad47620da" absoluteBounds="5.5, 4.625, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/NewsDataContext/NewsFlowsKeywords" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9b95ee6-7b23-4a0a-a346-8efc68a5256c" absoluteBounds="5.5150000000000006, 5.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4552dcc-4003-4044-9d68-fba3f91939b1" absoluteBounds="5.5, 2.125, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/NewsDataContext/NewsNewsFlows" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ec4a1b2-e1c7-4753-96fc-717dfc1e327b" absoluteBounds="5.5150000000000006, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12f9a2e3-1b00-49e0-b207-853280c06e15" isExpanded="false" absoluteBounds="7.875, 5.875, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vNewsFlows" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c11cfd52-8965-4dfc-bb99-9098d8797163" absoluteBounds="7.89, 6.3350000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8dd2257-a581-48a1-9eab-f5b83c6674eb" isExpanded="false" absoluteBounds="5.5, 6, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vNewsFlowsKeywords" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00902d6c-d9fe-4cfd-b76e-40d25b6765b0" absoluteBounds="5.515, 6.4600000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7552ca4-6c3e-4917-a2ab-f52c5de633d0" isExpanded="false" absoluteBounds="5.5, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vNewsNewsFlows" />
+      <nestedChildShapes>
+        <elementListCompartment Id="edb0989e-1275-4733-964f-ecb4894401e0" absoluteBounds="5.5150000000000006, 3.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.9125); (5.5 : 2.9125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NewsDataContext/News/News_NewsNewsFlows" />
+      <nodes>
+        <classShapeMoniker Id="50b4ba30-4ee4-45d5-beb0-c8c71bf1ce65" />
+        <classShapeMoniker Id="b4552dcc-4003-4044-9d68-fba3f91939b1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9a94782a-3f31-4871-9778-611506f90a4c" isExpanded="false" absoluteBounds="3.25, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vNewsDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da345ad9-51f8-42ad-a2d0-c7f407c811ce" absoluteBounds="3.265, 0.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58a560e8-cb44-46c7-94f8-be268ae9cb07" absoluteBounds="7.875, 2.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/NewsDataContext/NewsFlows" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b95c5807-1646-4993-8fd8-f8f0e391b73d" absoluteBounds="7.8900000000000006, 3.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.875 : 4.79890055338542); (7.5 : 4.79890055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NewsDataContext/NewsFlows/NewsFlows_NewsFlowsKeywords" />
+      <nodes>
+        <classShapeMoniker Id="58a560e8-cb44-46c7-94f8-be268ae9cb07" />
+        <classShapeMoniker Id="bab3fc20-66ae-4582-b670-b54ad47620da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.875 : 3.06814697265625); (7.5 : 3.06814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NewsDataContext/NewsFlows/NewsFlows_NewsNewsFlows" />
+      <nodes>
+        <classShapeMoniker Id="58a560e8-cb44-46c7-94f8-be268ae9cb07" />
+        <classShapeMoniker Id="b4552dcc-4003-4044-9d68-fba3f91939b1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="97a684ea-6ff8-4d29-9801-4bbd22c27aaa" isExpanded="false" absoluteBounds="0.5, 6, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16ef6168-c9b8-451c-8e41-df5323a8eb08" absoluteBounds="0.51499999999999968, 6.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f0fa33c-b2d7-49ca-a530-6b34f649412e" absoluteBounds="7.875, 5.125, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/NewsDataContext/vHeadlineNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1dcb5a12-2420-410b-aad8-00e794a427e3" absoluteBounds="7.8900000000000006, 5.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f5727e02-34e6-45b8-85ea-1d62779596a6" absoluteBounds="3.25, 7.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/NewsDataContext/vLatestPicNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6133688f-2ef4-4593-b8ea-48758874b26f" absoluteBounds="3.265, 7.9600000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b28c7a6-68f0-49fc-9ee4-83727b76ace3" absoluteBounds="5.5, 6.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/NewsDataContext/vTinyNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d4f1f9e-2d61-436d-89ae-55de6cc3b285" absoluteBounds="5.515, 7.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b3cc8379-366b-45c7-b535-196cb082fd9c" isExpanded="false" absoluteBounds="3.25, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/NewsDataContext/vRelatedNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5f66a32-644a-4fd8-a3e0-5898c8014c73" absoluteBounds="3.2649999999999997, 1.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e3ba596d-fd56-4f0e-a0b8-c9edf02a9263" absoluteBounds="5.625, 9, 2, 1.3862939453125">
+      <DataClassMoniker Name="/NewsDataContext/NewsImages" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0077b312-f21b-4d1b-9f5d-9c08ec779c09" absoluteBounds="5.64, 9.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7dd82632-0f58-40f6-a799-84057aced904" absoluteBounds="0.625, 8.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/NewsDataContext/vTinyLatestNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92565c0c-956c-465b-afc6-c389c08977a8" absoluteBounds="0.64000000000000057, 9.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

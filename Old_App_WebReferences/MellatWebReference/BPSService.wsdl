@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://217.218.45.222:8080/axis/services/BPSService" xmlns:impl="http://217.218.45.222:8080/axis/services/BPSService" targetNamespace="http://217.218.45.222:8080/axis/services/BPSService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://217.218.45.222:8080/axis/services/BPSService">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_xsd_anyType">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:anyType[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="StlmMrchRequest">
+    <wsdl:part name="trmID" type="xsd:int" />
+    <wsdl:part name="userID" type="xsd:string" />
+    <wsdl:part name="Pass" type="xsd:string" />
+    <wsdl:part name="datetime" type="xsd:string" />
+    <wsdl:part name="StlAcc" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="executeserviceRequest">
+    <wsdl:part name="trmID" type="xsd:int" />
+    <wsdl:part name="userID" type="xsd:string" />
+    <wsdl:part name="Pass" type="xsd:string" />
+    <wsdl:part name="datetime" type="xsd:string" />
+    <wsdl:part name="SaleCode" type="xsd:long" />
+    <wsdl:part name="amunt" type="xsd:long" />
+    <wsdl:part name="MTI" type="xsd:string" />
+    <wsdl:part name="ProccCode" type="xsd:string" />
+    <wsdl:part name="trnsID" type="xsd:long" />
+    <wsdl:part name="PURl" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="StlmMrchResponse">
+    <wsdl:part name="StlmMrchReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="refundRequest">
+    <wsdl:part name="trmID" type="xsd:int" />
+    <wsdl:part name="userID" type="xsd:string" />
+    <wsdl:part name="Pass" type="xsd:string" />
+    <wsdl:part name="datetime" type="xsd:string" />
+    <wsdl:part name="returnhash" type="xsd:string" />
+    <wsdl:part name="amunt" type="xsd:long" />
+    <wsdl:part name="trnsID" type="xsd:long" />
+  </wsdl:message>
+  <wsdl:message name="RPSResponse">
+    <wsdl:part name="RPSReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="refundResponse">
+    <wsdl:part name="refundReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="executeserviceResponse">
+    <wsdl:part name="executeserviceReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="verifyResponse">
+    <wsdl:part name="verifyReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="verifyRequest">
+    <wsdl:part name="trmID" type="xsd:int" />
+    <wsdl:part name="userID" type="xsd:string" />
+    <wsdl:part name="Pass" type="xsd:string" />
+    <wsdl:part name="datetime" type="xsd:string" />
+    <wsdl:part name="hash" type="xsd:string" />
+    <wsdl:part name="amunt" type="xsd:long" />
+  </wsdl:message>
+  <wsdl:message name="RPSRequest">
+    <wsdl:part name="trmID" type="xsd:int" />
+    <wsdl:part name="userID" type="xsd:string" />
+    <wsdl:part name="Pass" type="xsd:string" />
+    <wsdl:part name="datetime" type="xsd:string" />
+    <wsdl:part name="funcode" type="xsd:int" />
+    <wsdl:part name="params" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="RevServiceResponse">
+    <wsdl:part name="RevServiceReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="RevServiceRequest">
+    <wsdl:part name="trmID" type="xsd:int" />
+    <wsdl:part name="userID" type="xsd:string" />
+    <wsdl:part name="Pass" type="xsd:string" />
+    <wsdl:part name="datetime" type="xsd:string" />
+    <wsdl:part name="revHash" type="xsd:string" />
+    <wsdl:part name="amunt" type="xsd:long" />
+  </wsdl:message>
+  <wsdl:portType name="BPSService">
+    <wsdl:operation name="executeservice" parameterOrder="trmID userID Pass datetime SaleCode amunt MTI ProccCode trnsID PURl">
+      <wsdl:input name="executeserviceRequest" message="impl:executeserviceRequest" />
+      <wsdl:output name="executeserviceResponse" message="impl:executeserviceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="refund" parameterOrder="trmID userID Pass datetime returnhash amunt trnsID">
+      <wsdl:input name="refundRequest" message="impl:refundRequest" />
+      <wsdl:output name="refundResponse" message="impl:refundResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RevService" parameterOrder="trmID userID Pass datetime revHash amunt">
+      <wsdl:input name="RevServiceRequest" message="impl:RevServiceRequest" />
+      <wsdl:output name="RevServiceResponse" message="impl:RevServiceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="StlmMrch" parameterOrder="trmID userID Pass datetime StlAcc">
+      <wsdl:input name="StlmMrchRequest" message="impl:StlmMrchRequest" />
+      <wsdl:output name="StlmMrchResponse" message="impl:StlmMrchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RPS" parameterOrder="trmID userID Pass datetime funcode params">
+      <wsdl:input name="RPSRequest" message="impl:RPSRequest" />
+      <wsdl:output name="RPSResponse" message="impl:RPSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="verify" parameterOrder="trmID userID Pass datetime hash amunt">
+      <wsdl:input name="verifyRequest" message="impl:verifyRequest" />
+      <wsdl:output name="verifyResponse" message="impl:verifyResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BPSServiceSoapBinding" type="impl:BPSService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="executeservice">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="executeserviceRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="executeserviceResponse">
+        <wsdlsoap:body use="encoded" namespace="http://217.218.45.222:8080/axis/services/BPSService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="refund">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="refundRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="refundResponse">
+        <wsdlsoap:body use="encoded" namespace="http://217.218.45.222:8080/axis/services/BPSService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevService">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="RevServiceRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="RevServiceResponse">
+        <wsdlsoap:body use="encoded" namespace="http://217.218.45.222:8080/axis/services/BPSService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StlmMrch">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="StlmMrchRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="StlmMrchResponse">
+        <wsdlsoap:body use="encoded" namespace="http://217.218.45.222:8080/axis/services/BPSService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RPS">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="RPSRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="RPSResponse">
+        <wsdlsoap:body use="encoded" namespace="http://217.218.45.222:8080/axis/services/BPSService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verify">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="verifyRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="verifyResponse">
+        <wsdlsoap:body use="encoded" namespace="http://217.218.45.222:8080/axis/services/BPSService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BPSServiceService">
+    <wsdl:port name="BPSService" binding="impl:BPSServiceSoapBinding">
+      <wsdlsoap:address location="http://217.218.45.222:8080/axis/services/BPSService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="EngPopup" Codebehind="EngPopup.master.cs" %>
+
+<%@ Register Src="UserControls/Banner.ascx" TagName="Banner" TagPrefix="Ban" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>RoboNewser</title>
+    <meta id="description" name="description" runat="server" content="" />
+    <meta id="keywords" name="keywords" runat="server" content="پارست,قرآن,شعر,تقویم تاریخ,فرهنگ لغت,نقشه ایران,نقشه تهران,کارت تبریک" />
+    <link id="Link1" runat="server" href="https://static.robonewser.com/styles/main.css" rel="stylesheet" type="text/css" />
+    <link id="Link2" href="~/RadControls/Skins/Vista/PanelBar.Vista.css" rel="stylesheet"
+        type="text/css" runat="server" />
+    <%--    <base runat="server" href="https://www.robonewser.com/" />
+--%>
+
+    <script type="text/javascript">
+<!--
+        if (self != top) {
+            top.location.href = self.location;
+        }
+//-->
+    </script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div id="HomeWrapper">
+        <div class="MainPage">
+            <asp:ContentPlaceHolder ID="CP1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <div class="Clear">
+    </div>
+    <div class="cStats">
+
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+
+        <script type="text/javascript">
+            try {
+                var pageTracker = _gat._getTracker("UA-4554891-3");
+                pageTracker._trackPageview();
+            } catch (err) { }</script>
+
+    </div>
+    </form>
+</body>
+</html>
