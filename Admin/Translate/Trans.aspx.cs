@@ -22,7 +22,7 @@ namespace Parsetv91._1.Admin.Translate
         {
             //string SourceText = txtSource.Text;
             //ReqUtils Utils = new ReqUtils();
-            //string Url = "https://www.googleapis.com/language/translate/v2?key=AIzaSyADgVmgF4U_HWdHMWMQLEPIrnCk7a8SIyA&q=" + Server.UrlEncode(SourceText) + "&source=fa&target=en";
+            //string Url = "https://www.googleapis.com/language/translate/v2?key=**********" + Server.UrlEncode(SourceText) + "&source=fa&target=en";
             //string Result = Utils.GetHTML(Url, System.Text.Encoding.UTF8);
 
 
