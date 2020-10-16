@@ -29,7 +29,7 @@ namespace Parsetv91._1.Admin.Translate
             string SourceText = txtSource.Text;
             string Url = "https://www.googleapis.com/language/translate/v2";
 
-            string postData = "key=AIzaSyADgVmgF4U_HWdHMWMQLEPIrnCk7a8SIyA&q=" + Server.UrlEncode(SourceText) + "&source=fa&target=en";
+            string postData = "key=**********" + Server.UrlEncode(SourceText) + "&source=fa&target=en";
 
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
